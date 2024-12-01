@@ -32,6 +32,7 @@ const Payment = () => {
   };
 
   const openRazorpayCheckout = (orderId, amount, currency) => {
+    console.log("Razorpay checkout")
     const options = {
       key: "rzp_test_FgDeQOasYdxuEs", // Razorpay Key ID
       amount, // Amount in paise
@@ -52,13 +53,14 @@ const Payment = () => {
         color: "#3399cc",
       },
     };
-
+    console.log("open razorpay")
     const rzp = new window.Razorpay(options);
     rzp.open();
   };
 
   const verifyPayment = async (paymentDetails) => {
     try {
+      console.log("Payment Verification")
       const response = await fetch(
         "http://localhost:7000/payment/verifypayment",
         {
