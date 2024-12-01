@@ -41,7 +41,7 @@ const Payment = () => {
       name: "E-Commerce App",
       description: "Test Transaction",
       handler: async (response) => {
-        console.log("Payment successful:", response);
+        console.log("Payment successful Handle Response:-", response);
         await verifyPayment(response);
       },
       prefill: {
